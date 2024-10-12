@@ -31,7 +31,6 @@ main() {
         echo -e "${YELLOW}작업 공간 이동 중...${NC}"
         cd /root/NotPixel
         pip3 install -r requirements.txt
-        npm install
         cp .env-example .env
 
         # Node.js LTS 버전 설치 및 사용
@@ -41,6 +40,7 @@ main() {
         [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # nvm을 로드합니다
         nvm install --lts
         nvm use --lts
+        npm install
 
         # 사용자에게 query_id 입력 안내
         echo -e "${GREEN}여러개의 NotPixsel를 구동하기 위해서는 각 query_id마다 같은 개수의 프록시가 필요합니다.${NC}"
